@@ -1,2 +1,2 @@
 # Psychological-counseling-system
- Graduation design
+ Graduation desig
