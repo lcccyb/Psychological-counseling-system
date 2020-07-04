@@ -1,0 +1,63 @@
+
+
+项目工程文件
+
+src：
+
+bean是数据库表对应实体类
+
+model包下分别是dao层和service层
+
+servlet下的是公共模块部分，admin，client，doctor分别是三个端对应的控制器
+
+test是测试包，无用
+
+utils.filter过滤器，登录过滤，字符过滤等等
+
+utils.jdbc数据库工具类，配置和得到连接池的连接
+
+utils.mail是邮件模块
+
+utils下的ConfigProperties是读入配置文件，ResultDate和UploadResult分别是请求响应结果和文件上传结果对象，Util封装了常用的工具
+
+config.properties 配置参数，配置邮件发送，文件上传大小类型限制等
+
+pool.properties 是连接池配置文件
+
+WebContext：
+
+amidn,client,doctor分别是三个端对应的页面
+
+plunge是用到的插件
+
+mutualResource 是js，css样式模版目录
+
+
+
+数据库名：mind_sub
+
+
+
+运行项目
+
+新建数据库mind_sub，运行脚本mind_sub.sql
+
+修改pool.properties中的username和password
+
+修改config.properties中的邮件服务器为你自己的
+
+  HostName ，AuthenticationEmail，AuthenticationPwd
+
+  （我这里用的qq的）
+
+  修改upload_path路径
+
+在要部署的Tomcat中修改它的server.xml，在Host标签下
+
+增加一行 `<Context docBase="F:\upload" path="/mind_upload" reloadable="true"/>`
+
+这是文件和图片上传存放的位置
+
+注意要与你config.properties中upload_path路径一致**
+
+然后把项目部署到Tomcat运行即可
